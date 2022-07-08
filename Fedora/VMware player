@@ -1,0 +1,17 @@
+# dependency:
+## Kernel headers
+https://www.reddit.com/r/Fedora/comments/nl6arp/how_do_i_install_kernel_headers_for_fedora/
+
+sudo dnf install kernel-devel
+sudo dnf install "kernel-devel-$(uname -r)"
+sudo dnf install dkms
+
+# Fix
+## set kernel with grubby
+https://www.mariuszczyz.com/choose-default-kernel-modern-fedora.html
+
+## Works on kernel 5.17.5 only!
+"stdarg.h: No such file or directory"
+https://ask.fedoraproject.org/t/installing-vmware-stdarg-h-and-stddef-h-not-found/20577
+
+sudo CPATH="/usr/lib/gcc/x86_64-redhat-linux/12/include/" vmware-modconfig --console --install-all
